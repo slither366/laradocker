@@ -28,7 +28,7 @@ services:
       ports:
        - "8080:80"
       links:
-       - db
+       - mysql
 
     php-fpm:
       build: phpdocker/php-fpm
