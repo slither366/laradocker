@@ -38,3 +38,22 @@ services:
         - ./src:/application
         - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.1/fpm/conf.d/99-overrides.ini
 
+    webserver2:
+      image: nginx:alpine
+      container_name: laradocker-webserver2
+      working_dir: /application2
+      volumes:
+          - ./application2
+          - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      ports:
+       - "8081:80"
+      links:
+       - mysql
+
+    php-fpm2:
+      build: phpdocker/php-fpm
+      container_name: weblara2
+      working_dir: /application2
+      volumes:
+        - ./application2
+        - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.1/fpm/conf.d/99-overrides.ini
