@@ -56,7 +56,7 @@ services:
         - ./src:/application
         - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.1/fpm/conf.d/99-overrides.ini
 
-    php-fpm:
+    php-fpm2:
       build: phpdocker/php-fpm
       container_name: weblara2
       working_dir: /app
