@@ -11,9 +11,9 @@ services:
       volumes:
         - .:/application
       environment:
-        - MYSQL_ROOT_PASSWORD=root
-        - MYSQL_DATABASE=caba123lleria
-        - MYSQL_USER=restpoliticas
+        - MYSQL_ROOT_PASSWORD=caba123lleria
+        - MYSQL_DATABASE=restpoliticas
+        - MYSQL_USER=dflores
         - MYSQL_PASSWORD=caba123lleria
       ports:
         - "3306:3306"  
