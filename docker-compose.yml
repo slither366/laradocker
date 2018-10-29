@@ -6,7 +6,7 @@ services:
 
     mysql:
       image: mysql:5.7
-      container_name: laradocker-mysql
+      container_name: dbmysql
       working_dir: /application
       volumes:
         - .:/application
