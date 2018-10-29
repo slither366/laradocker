@@ -44,7 +44,7 @@ services:
 
     php-fpm:
       build: phpdocker/php-fpm
-      container_name: webFront
+      container_name: webRest
       working_dir: /application
       volumes:
         - ./src:/application
@@ -52,7 +52,7 @@ services:
 
     php-fpm2:
       build: phpdocker/php-fpm2
-      container_name: webRest
+      container_name: webFront
       working_dir: /app
       volumes:
         - .:/app
