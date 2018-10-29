@@ -30,6 +30,18 @@ services:
       links:
        - mysql
 
+    web1:
+      image: nginx:alpine
+      container_name: web1
+      working_dir: /application
+      volumes:
+        - ./www:/application
+        - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      ports:
+        - "81:80"
+      links:
+       - mysql
+
     web2:
       image: dockercloud/hello-world
       container_name: web2
