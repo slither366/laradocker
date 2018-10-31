@@ -9,11 +9,10 @@ use DB;
 
 class DepositoTardeController extends ApiController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    /*==================================
+    =            METHOD GET            =
+    ==================================*/
     public function index()
     {
         $depositos = DepositoTarde::all();
@@ -21,12 +20,9 @@ class DepositoTardeController extends ApiController
         return $this->showAll($depositos);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    /*===================================
+    =            METHOD POST            =
+    ===================================*/
     public function store(Request $request)
     {
         $rules = [
@@ -53,45 +49,10 @@ class DepositoTardeController extends ApiController
         return $this->showOne($depositos);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $depositos = DepositoTarde::findOrFail($id);
-
-        return $this->showOne($depositos);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $depositos = DepositoTarde::findOrFail($id);
-
-        $depositos->delete();
-    }
-
-    public function getLlaveDif($llave)
+    /*====================================================================
+    =            VERIFICA SI EXISTE DEPOSITO TARDE REGISTRADO            =
+    ====================================================================*/
+    public function getLlave($llave)
     {
         //$depositos = DepositoTarde::findOrFail($id);
         $depositos = DB::table('deposito_tardes')->where('llave_dif','=',$llave)->get();
@@ -102,6 +63,6 @@ class DepositoTardeController extends ApiController
         else{
             return 'true';
         }
+    }
 
-    }    
 }
