@@ -8,11 +8,10 @@ use App\User;
 
 class UserController extends ApiController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    /*==================================
+    =            METHOD GET            =
+    ==================================*/
     public function index()
     {
         $usuarios = User::all();
@@ -20,12 +19,9 @@ class UserController extends ApiController
         return $this->showAll($usuarios);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    /*===================================
+    =            METHOD POST            =
+    ===================================*/
     public function store(Request $request)
     {
         $rules = [
@@ -50,41 +46,14 @@ class UserController extends ApiController
         return $this->showOne($usuario); 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    /*============================================
+    =            DELETE ALL REGISTROS            =
+    ============================================*/
+    public function deleteAll()
     {
-        $usuario = User::findOrFail($id);
+        User::truncate();
 
-        return $this->showOne($usuario);
+        return "true";
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $user = User::findOrFail($id);
-
-        $user->delete();
-    }
 }

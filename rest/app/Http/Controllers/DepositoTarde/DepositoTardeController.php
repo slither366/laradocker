@@ -31,6 +31,7 @@ class DepositoTardeController extends ApiController
             'ano_periodo' => 'required|digits:4',
             'dia_cierre' => 'required',
             'fecha_cierre_dia' => 'required',
+            'fecha_cuadratura_cierre_dia' => 'required',
             'dia_op_banc' => 'required',
             'fecha_op_bancaria' => 'required',
             'dif_min' => 'required',//numeric
@@ -39,6 +40,9 @@ class DepositoTardeController extends ApiController
             'monto_deposito' => 'required',//numeric
             'num_operacion' => 'required',//numeric
             'usuario' => 'required',
+            'mon_tot_perdido' => 'required',
+            'estado_cuadratura' => 'required',
+            'llave_dif' => 'required',
         ];
 
         $this->validate($request, $rules);
@@ -64,5 +68,15 @@ class DepositoTardeController extends ApiController
             return 'true';
         }
     }
+
+    /*============================================
+    =            DELETE ALL REGISTROS            =
+    ============================================*/
+    public function deleteAll()
+    {
+        DepositoTarde::truncate();
+
+        return "true";
+    }    
 
 }
