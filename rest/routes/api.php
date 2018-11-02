@@ -20,15 +20,18 @@ Route::get('getLlave/{DepositoTarde}','DepositoTarde\DepositoTardeController@get
 =========================================*/
 Route::resource('jefezonal','Jefezonal\JefezonalController',['only'=>['index','store']]);
 Route::delete('jefezonal/todos','Jefezonal\JefezonalController@deleteAll');
+Route::get('jefezonal/verificaJefe/{dni_jefezona}','Jefezonal\JefezonalController@getJefeExiste');
 
 /*===================================
 =            API LOCALES            =
 ===================================*/
 Route::resource('local','Locales\LocalesDetController',['only'=>['index','store']]);
 Route::delete('local/todos','Locales\LocalesDetController@deleteAll');
+Route::get('local/verificaLocal/{cod_local}','Locales\LocalesDetController@getLocalExiste');
 
 /*=================================================
 =            API JEFES ZONALES X LOCAL            =
 =================================================*/
 Route::resource('jefexlocal','Locales\LocalesJefezonalController',['only'=>['index','store']]);
 Route::delete('jefexlocal/todos','Locales\LocalesJefezonalController@deleteAll');
+Route::get('jefexlocal/verificaJefexlocal/{cod_local}','Locales\LocalesJefezonalController@getJefexlocalExiste');

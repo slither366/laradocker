@@ -5,6 +5,7 @@ namespace App\Http\Controllers\locales;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ApiController;
 use App\LocalesJefezonal;
+use DB;
 
 class LocalesJefezonalController extends ApiController
 {
@@ -44,4 +45,22 @@ class LocalesJefezonalController extends ApiController
 
         return "true";
     }
+
+    /*======================================================
+    =            GET Revis si JefexLocal Existe            =
+    ======================================================*/
+    public function getJefexlocalExiste($cod_local)
+    {
+
+        $query = DB::table('locales_jefezonals')->where('cod_local','=',$cod_local)->get();
+
+        if($query == '[]'){
+            return 'false';
+        }
+        else{
+            return 'true';
+        }
+
+    }       
+
 }

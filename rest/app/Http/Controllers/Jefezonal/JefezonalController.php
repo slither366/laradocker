@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Jefezonal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ApiController;
 use App\Jefezonal;
+use DB;
 
 class JefezonalController extends ApiController
 {
@@ -47,6 +48,21 @@ class JefezonalController extends ApiController
         Jefezonal::truncate();
 
         return "true";
+    }
+
+    /*=========================================================
+    =            GET Verifica si Jefe Zonal Existe            =
+    =========================================================*/
+    public function getJefeExiste($dni_jefezona)
+    {
+        $query = DB::table('jefezonals')->where('dni_jefezona','=',$dni_jefezona)->get();
+
+        if($query == '[]'){
+            return 'false';
+        }
+        else{
+            return 'true';
+        }
     }
     
 }

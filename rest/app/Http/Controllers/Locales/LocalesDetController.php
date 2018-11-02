@@ -5,6 +5,7 @@ namespace App\Http\Controllers\locales;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ApiController;
 use App\LocalesDet;
+use DB;
 
 class LocalesDetController extends ApiController
 {
@@ -46,5 +47,21 @@ class LocalesDetController extends ApiController
 
         return "true";
     }
+
+    /*==================================================
+    =            GET Revisa Si Local Existe            =
+    ==================================================*/
+    public function getLocalExiste($cod_local)
+    {
+        //$depositos = DepositoTarde::findOrFail($id);
+        $query = DB::table('locales_dets')->where('cod_local','=',$cod_local)->get();
+
+        if($query == '[]'){
+            return 'false';
+        }
+        else{
+            return 'true';
+        }
+    }    
 
 }
