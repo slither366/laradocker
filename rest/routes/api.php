@@ -15,6 +15,12 @@ Route::resource('DepositoTarde','DepositoTarde\DepositoTardeController',['only'=
 Route::delete('DepositoTarde/todos','DepositoTarde\DepositoTardeController@deleteAll');
 Route::get('getLlave/{DepositoTarde}','DepositoTarde\DepositoTardeController@getLlave');
 
+/*==============================================
+=            API DEPOSITO PENDIENTE            =
+==============================================*/
+Route::resource('DepositoPendiente','DepositoPendiente\DepositoPendienteController',['only'=>['index','store']]);
+Route::delete('DepositoPendiente/todos','DepositoPendiente\DepositoPendienteController@deleteAll');
+
 /*=========================================
 =            API JEFES ZONALES            =
 =========================================*/

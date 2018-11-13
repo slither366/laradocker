@@ -27,15 +27,16 @@ class DepositoTardeController extends ApiController
     {
         $rules = [
             'cod_local' => 'required|size:3',
-            'mes_periodo' => 'required|digits:2',
-            'ano_periodo' => 'required|digits:4',
-            'dia_cierre' => 'required',
+            /*'mes_periodo' => 'required|digits:2',
+            'ano_periodo' => 'required|digits:4',*/
+            //'dia_cierre' => 'required',
             'fecha_cierre_dia' => 'required',
-            'fecha_cuadratura_cierre_dia' => 'required',
-            'dia_op_banc' => 'required',
+            //'fecha_cuadratura_cierre_dia' => 'required',
+            //'dia_op_banc' => 'required',
             'fecha_op_bancaria' => 'required',
-            'dif_min' => 'required',//numeric
-            'cant_dias' => 'required',
+            /*'dif_min' => 'required',//numeric
+            'cant_dias' => 'required',*/
+            'status' => 'required',
             'moneda' => 'required',
             'monto_deposito' => 'required',//numeric
             'num_operacion' => 'required',//numeric

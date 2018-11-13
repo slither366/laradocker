@@ -18,7 +18,7 @@ class User extends Authenticatable
     const USUARIO_REGULAR = 'false';
 
     const TIPO_ADMINISTRADOR = 'administrador';
-    const TIPO_JEFEZONAL = 'jefe zonal';
+    const TIPO_JEFEZONAL = 'jefe_zonal';
     const TIPO_OTROS = 'otros';
 
     protected $table = 'users';

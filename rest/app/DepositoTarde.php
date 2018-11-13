@@ -13,15 +13,16 @@ class DepositoTarde extends Model
      */
     protected $fillable = [
         'cod_local',
-        'mes_periodo',
-        'ano_periodo',
-        'dia_cierre',
+        /*'mes_periodo',
+        'ano_periodo',*/
+        //'dia_cierre',
         'fecha_cierre_dia',
-        'fecha_cuadratura_cierre_dia',
-        'dia_op_banc',
+        //'fecha_cuadratura_cierre_dia',
+        //'dia_op_banc',
         'fecha_op_bancaria',
-        'dif_min',
-        'cant_dias',
+        //'dif_min',
+        //'cant_dias',
+        'status',
         'moneda',
         'monto_deposito',
         'num_operacion',
