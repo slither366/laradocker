@@ -8,19 +8,6 @@ use Illuminate\Http\Request;
 Route::resource('users','User\UserController',['only'=>['index','store']]);
 Route::delete('users/todos','User\UserController@deleteAll');
 
-/*==========================================
-=            API DEPOSITO TARDE            =
-==========================================*/
-Route::resource('DepositoTarde','DepositoTarde\DepositoTardeController',['only'=>['index','store']]);
-Route::delete('DepositoTarde/todos','DepositoTarde\DepositoTardeController@deleteAll');
-Route::get('getLlave/{DepositoTarde}','DepositoTarde\DepositoTardeController@getLlave');
-
-/*==============================================
-=            API DEPOSITO PENDIENTE            =
-==============================================*/
-Route::resource('DepositoPendiente','DepositoPendiente\DepositoPendienteController',['only'=>['index','store']]);
-Route::delete('DepositoPendiente/todos','DepositoPendiente\DepositoPendienteController@deleteAll');
-
 /*=========================================
 =            API JEFES ZONALES            =
 =========================================*/
@@ -41,3 +28,30 @@ Route::get('local/verificaLocal/{cod_local}','Locales\LocalesDetController@getLo
 Route::resource('jefexlocal','Locales\LocalesJefezonalController',['only'=>['index','store']]);
 Route::delete('jefexlocal/todos','Locales\LocalesJefezonalController@deleteAll');
 Route::get('jefexlocal/verificaJefexlocal/{cod_local}','Locales\LocalesJefezonalController@getJefexlocalExiste');
+
+/*==========================================
+=            API DEPOSITO TARDE            =
+==========================================*/
+Route::resource('DepositoTarde','DepositoTarde\DepositoTardeController',['only'=>['index','store']]);
+Route::delete('DepositoTarde/todos','DepositoTarde\DepositoTardeController@deleteAll');
+Route::get('getLlave/{DepositoTarde}','DepositoTarde\DepositoTardeController@getLlave');
+
+/*==============================================
+=            API DEPOSITO PENDIENTE            =
+==============================================*/
+Route::resource('DepositoPendiente','DepositoPendiente\DepositoPendienteController',['only'=>['index','store']]);
+Route::delete('DepositoPendiente/todos','DepositoPendiente\DepositoPendienteController@deleteAll');
+
+/*==============================================================
+=            API TRANSFERENCIAS PENDIENTES CABECERA            =
+==============================================================*/
+Route::resource('transferenciasCab','Transferencia\TrasferenciaPendienteCabController',['only'=>['index','store']]);
+Route::delete('transferenciasCab/todos','Transferencia\TrasferenciaPendienteCabController@deleteAll');
+
+/*=============================================================
+=            API TRANSFERENCIAS PENDIENTES DETALLE            =
+=============================================================*/
+Route::resource('transferenciasDet','Transferencia\TrasferenciaPendienteDetController',['only'=>['index','store']]);
+Route::delete('transferenciasDet/todos','Transferencia\TrasferenciaPendienteDetController@deleteAll');
+
+
