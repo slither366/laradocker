@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\locales;
+namespace App\Http\Controllers\Remesas;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\ApiController;
-use App\LocalesJefezonal;
+use App\RemesaPendiente;
 use DB;
 
-class LocalesJefezonalController extends ApiController
+class RemesaPendienteController extends ApiController
 {
-    
+
     /*==================================
     =            METHOD GET            =
     ==================================*/
     public function index()
     {
-        $data = LocalesJefezonal::all();
+        $data = RemesaPendiente::all();
 
         return $this->showAll($data);
     }
@@ -25,14 +25,20 @@ class LocalesJefezonalController extends ApiController
     ===================================*/
     public function store(Request $request)
     {
-        $rules = [          
+
+        $rules = [
             'cod_local' => 'required|size:3',
-            'dni_jefe_zona' => 'required|size:8',
+            'fecha_creacion_sobre' => 'required',
+            'fecha_consignada' => 'required',
+            'cant_dias' => 'required',
+            'dias_toca' => 'required',
+            'dif_day' => 'required',
+            'monto' => 'required',
         ];
 
         $this->validate($request, $rules);
         $campos = $request->all();
-        $data = LocalesJefezonal::create($campos);
+        $data = RemesaPendiente::create($campos);
 
         return $this->showOne($data);
     }
@@ -42,26 +48,10 @@ class LocalesJefezonalController extends ApiController
     ============================================*/
     public function deleteAll()
     {
-        LocalesJefezonal::truncate();
+        RemesaPendiente::truncate();
 
         return "true";
     }
 
-    /*======================================================
-    =            GET Revis si JefexLocal Existe            =
-    ======================================================*/
-    public function getJefexlocalExiste($cod_local)
-    {
-
-        $query = DB::table('locales_jefezonals')->where('cod_local','=',$cod_local)->get();
-
-        if($query == '[]'){
-            return 'false';
-        }
-        else{
-            return 'true';
-        }
-
-    }       
 
 }

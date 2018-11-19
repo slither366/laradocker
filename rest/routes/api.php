@@ -54,4 +54,15 @@ Route::delete('transferenciasCab/todos','Transferencia\TrasferenciaPendienteCabC
 Route::resource('transferenciasDet','Transferencia\TrasferenciaPendienteDetController',['only'=>['index','store']]);
 Route::delete('transferenciasDet/todos','Transferencia\TrasferenciaPendienteDetController@deleteAll');
 
+/*==========================================
+=            API REMESAS TARDES            =
+==========================================*/
+Route::resource('remesasTardes','Remesas\RemesaTardeController',['only'=>['index','store']]);
+Route::delete('remesasTardes/todos','Remesas\RemesaTardeController@deleteAll');
+Route::get('remesasTardes/getLlave/{DepositoTarde}','Remesas\RemesaTardeController@getLlave');
 
+/*==========================================
+=            API REMESAS PENDIENTE            =
+==========================================*/
+Route::resource('remesasPendientes','Remesas\RemesaPendienteController',['only'=>['index','store']]);
+Route::delete('remesasPendientes/todos','Remesas\RemesaPendienteController@deleteAll');
