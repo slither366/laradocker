@@ -14,6 +14,9 @@ class User extends Authenticatable
     const USUARIO_VERIFICADO = '1';
     const USUARIO_NO_VERIFICADO = '0';
 
+    const ESTADO_ACTIVO = 'A';
+    const ESTADO_INACTIVO = 'N';
+
     const USUARIO_ADMINISTRADOR = 'true';
     const USUARIO_REGULAR = 'false';
 
@@ -35,6 +38,7 @@ class User extends Authenticatable
         'tipo_usuario',
         'dni',
         'password',
+        'estado',
         'verified', 
         'verification_token',
         'admin', 
@@ -95,6 +99,11 @@ class User extends Authenticatable
     public function esTipoOtros()
     {
         return $this->tipo_usuario == User::TIPO_OTROS;
-    }    
+    }
+
+    public function esActivo()
+    {
+        return $this->estado == User::ESTADO_ACTIVO;
+    }   
 
 }
