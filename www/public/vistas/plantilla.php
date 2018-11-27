@@ -125,6 +125,13 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"]=="ok")
       //-------------------------------------------
       // If Rutas3
       if(
+           $_GET["ruta"] == "salir"
+      ){
+
+        include "modulos/salir.php";
+
+      }elseif(
+
            $_GET["ruta"] == "inicio" ||
            $_GET["ruta"] == "usuarios" ||
            $_GET["ruta"] == "categorias" ||
@@ -134,9 +141,11 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"]=="ok")
            $_GET["ruta"] == "crear-ventas" ||
            $_GET["ruta"] == "reportes" ||
            $_GET["ruta"] == "salir"
+
       ){
 
         include "modulos/".$_GET["ruta"].".php";
+        //include "modulos/ventas.php";
 
       }elseif(
 
@@ -175,7 +184,8 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"]=="ok")
 
   }else{
 
-    include "modulos/inicio.php";
+    //include "modulos/inicio.php";
+    include "modulos/ventas.php";
 
   }
   //----End If Rutas2
