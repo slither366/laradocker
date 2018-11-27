@@ -28,7 +28,7 @@ class RemesaTardeController extends ApiController
 
         $rules = [
             'cod_local' => 'required|size:3',
-            'cod_remito' => 'required|size:10',
+            'cod_remito' => 'required',
             'fecha_creacion_sobre' => 'required',
             'fecha_consignada' => 'required',
             'fec_crea_remito' => 'required',
