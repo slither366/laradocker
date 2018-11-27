@@ -120,77 +120,9 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"]=="ok")
     
   //-------------------------------------------
   // If Rutas2
-  echo "<scrip>alert(".$_GET["ruta"].");</script>";
+  echo "<scrip>alert('Hola mundo');</script>";
+  echo "ingreso a Prueba";
 
-  if(isset($_GET["ruta"])){
-    //var_dump($GET["ruta"]);
-
-      //-------------------------------------------
-      // If Rutas3
-      if(
-           $_GET["ruta"] == "salir"
-      ){
-
-        include "modulos/salir.php";
-
-      }elseif(
-
-           $_GET["ruta"] == "inicio" ||
-           $_GET["ruta"] == "usuarios" ||
-           $_GET["ruta"] == "categorias" ||
-           $_GET["ruta"] == "productos" ||
-           $_GET["ruta"] == "clientes" ||
-           $_GET["ruta"] == "ventas" ||
-           $_GET["ruta"] == "crear-ventas" ||
-           $_GET["ruta"] == "reportes" ||
-           $_GET["ruta"] == "salir"
-
-      ){
-
-        include "modulos/".$_GET["ruta"].".php";
-        //include "modulos/ventas.php";
-
-      }elseif(
-
-           $_GET["ruta"] == "depositoPendiente" ||
-           $_GET["ruta"] == "depositoTarde" ||
-           $_GET["ruta"] == "depositoBancario" ||
-           $_GET["ruta"] == "depositoPendienteDet" ||
-           $_GET["ruta"] == "depositoTardeDet" ||
-           $_GET["ruta"] == "modalDepoPendiente"
-
-      ){
-
-        include "modulos/depositos/".$_GET["ruta"].".php";
-
-      }elseif(
-          $_GET["ruta"] == "transferenciaPendiente"
-      ){
-
-        include "modulos/transferencias/".$_GET["ruta"].".php";
-
-      }elseif(
-          $_GET["ruta"] == "remesa" ||
-          $_GET["ruta"] == "remesaPendiente" ||
-          $_GET["ruta"] == "remesaTarde"
-      ){
-
-        include "modulos/remesas/".$_GET["ruta"].".php";
-
-      }else{
-
-        //include "modulos/ventas.php";
-        include "modulos/404.php";
-
-      }
-      //----End If Rutas3
-
-  }else{
-
-    include "modulos/inicio.php";
-    //include "modulos/ventas.php";
-
-  }
   //----End If Rutas2
 
     /*==============================
@@ -206,6 +138,7 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"]=="ok")
   include "modulos/login.php";
 
 }
+
 //----End If Rutas1
 
 ?>
