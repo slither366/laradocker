@@ -189,7 +189,7 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"]=="ok")
     include "modulos/inicio.php";
     //include "modulos/ventas.php";
 
-    echo '<scrip>alert($_GET["ruta"]);</script>'
+    echo '<scrip>alert($_GET["ruta"]);</script>';
 
   }
   //----End If Rutas2
