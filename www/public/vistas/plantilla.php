@@ -120,7 +120,9 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"]=="ok")
     
   //-------------------------------------------
   // If Rutas2
+  
   if(isset($_GET["ruta"])){
+    //var_dump($GET["ruta"]);
 
       //-------------------------------------------
       // If Rutas3
@@ -184,8 +186,8 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"]=="ok")
 
   }else{
 
-    //include "modulos/inicio.php";
-    include "modulos/ventas.php";
+    include "modulos/inicio.php";
+    //include "modulos/ventas.php";
 
   }
   //----End If Rutas2
