@@ -15,12 +15,14 @@ class CreateJefezonalsTable extends Migration
     {
         Schema::create('jefezonals', function (Blueprint $table) {
             $table->increments('id');
+
             $table->string('dni_jefezona', 30);
             $table->string('nom_jefezona', 100);
             $table->string('mail_jefezona', 100);
             $table->string('dni_subgerente', 30);
             $table->string('nom_subgerente', 100);
             $table->string('mail_subgerente', 100);
+            
             $table->timestamps();
         });
     }

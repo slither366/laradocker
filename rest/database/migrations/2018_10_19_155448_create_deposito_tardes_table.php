@@ -15,6 +15,7 @@ class CreateDepositoTardesTable extends Migration
     {
         Schema::create('deposito_tardes', function (Blueprint $table) {
             $table->increments('id');
+
             $table->char('cod_local',3);
             /*table->char('mes_periodo',2);
             $table->char('ano_periodo',4);*/
@@ -33,6 +34,7 @@ class CreateDepositoTardesTable extends Migration
             $table->decimal('mon_tot_perdido',9,3);
             $table->char('estado_cuadratura',1);
             $table->string('llave_dif',100);
+            
             $table->timestamps();
         });
     }

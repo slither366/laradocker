@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DepositoPendiente extends Model
+class CierrePendiente extends Model
 {
-
+	
     /**
      * The attributes that are mass assignable.
      *
@@ -14,8 +14,7 @@ class DepositoPendiente extends Model
      */
     protected $fillable = [
         'cod_local',
-        'dia_cierre',
         'fecha_mes',
     ];
-    
+
 }

@@ -98,6 +98,7 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"]=="ok")
     include "modals/modalDepoTarde.php";
     include "modals/modalRemesaPend.php";
     include "modals/modalRemesaTard.php";
+    include "modals/modalUpdatePerfil.php";
 
 
   echo '<div class="wrapper">';
@@ -143,7 +144,8 @@ if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"]=="ok")
            $_GET["ruta"] == "ventas" ||
            $_GET["ruta"] == "crear-ventas" ||
            $_GET["ruta"] == "reportes" ||
-           $_GET["ruta"] == "salir"
+           $_GET["ruta"] == "salir" ||
+           $_GET["ruta"] == "perfil"
 
       ){
 

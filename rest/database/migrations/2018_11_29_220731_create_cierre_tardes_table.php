@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDepositoPendientesTable extends Migration
+class CreateCierreTardesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateDepositoPendientesTable extends Migration
      */
     public function up()
     {
-        Schema::create('deposito_pendientes', function (Blueprint $table) {
+        Schema::create('cierre_tardes', function (Blueprint $table) {
             $table->increments('id');
 
             $table->char('cod_local',3);
-            $table->string('dia_cierre',10);
-            $table->date('fecha_mes');
+            $table->date('fec_cierre_dia_vta');
+            $table->datetime('fec_vb_cierre_dia');
+            $table->integer('dif_dia');
+            $table->string('llave_dif',50);
             
             $table->timestamps();
         });
@@ -31,6 +33,6 @@ class CreateDepositoPendientesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('deposito_pendientes');
+        Schema::dropIfExists('cierre_tardes');
     }
 }

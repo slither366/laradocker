@@ -111,6 +111,17 @@
 				</ul>
 				
 			</li>
+
+			<li class="active">
+
+				<a href="perfil">
+					
+					<i class="fa fa-list-ul"></i>
+					<span>Mi Perfil</span>
+
+				</a>
+				
+			</li>			
 							
 		</ul>
 	</section>

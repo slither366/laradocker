@@ -16,6 +16,7 @@ class CreateTransferenciaPendienteDetsTable extends Migration
         Schema::create('transferencia_pendiente_dets', function (Blueprint $table)
         {
             $table->increments('id');
+
             $table->char('cod_local',3);
             $table->char('num_nota_es',10);
             $table->integer('sec_det_nota_es');
@@ -23,6 +24,7 @@ class CreateTransferenciaPendienteDetsTable extends Migration
             $table->integer('cant_mov');
             $table->integer('val_frac');
             $table->datetime('fec_nota_es_det',3);
+            
             $table->timestamps();
         });
     }

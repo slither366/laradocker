@@ -15,11 +15,13 @@ class CreateLocalesDetsTable extends Migration
     {
         Schema::create('locales_dets', function (Blueprint $table) {
             $table->increments('id');
+
             $table->string('cod_local',3);
             $table->string('cod_cia',3);
             $table->string('descripcion',100);
             $table->string('mail_local',120);
             $table->string('cod_zona',3);
+            
             $table->timestamps();
         });
     }

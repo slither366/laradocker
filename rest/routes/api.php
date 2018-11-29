@@ -62,7 +62,19 @@ Route::delete('remesasTardes/todos','Remesas\RemesaTardeController@deleteAll');
 Route::get('remesasTardes/getLlave/{DepositoTarde}','Remesas\RemesaTardeController@getLlave');
 
 /*==========================================
-=            API REMESAS PENDIENTE            =
+=            API REMESAS PENDIENTE         =
 ==========================================*/
 Route::resource('remesasPendientes','Remesas\RemesaPendienteController',['only'=>['index','store']]);
 Route::delete('remesasPendientes/todos','Remesas\RemesaPendienteController@deleteAll');
+
+/*==========================================
+=            API CIERRES PENDIENTES        =
+==========================================*/
+Route::resource('cierresPendientes','Cierre\CierrePendienteController',['only'=>['index','store']]);
+Route::delete('cierresPendientes/todos','Cierre\CierrePendienteController@deleteAll');
+
+/*==========================================
+=            API CIERRES TARDES            =
+==========================================*/
+Route::resource('cierresTardes','Cierre\CierreTardeController',['only'=>['index','store']]);
+Route::delete('cierresTardes/todos','Cierre\CierreTardeController@deleteAll');

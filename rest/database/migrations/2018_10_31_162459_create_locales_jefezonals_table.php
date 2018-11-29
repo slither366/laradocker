@@ -15,8 +15,10 @@ class CreateLocalesJefezonalsTable extends Migration
     {
         Schema::create('locales_jefezonals', function (Blueprint $table) {
             $table->increments('id');
+
             $table->string('cod_local',3);
             $table->string('dni_jefe_zona',30);
+            
             $table->timestamps();
         });
     }

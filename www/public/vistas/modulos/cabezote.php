@@ -37,34 +37,36 @@
 			
 			<ul class="nav navbar-nav">
 
-				<li class="dropdown user user-menu">
 
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	          <li class="dropdown user user-menu">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	              <img src="vistas/img/usuarios/default/anonymous.png" class="user-image" alt="User Image">
+	              <span class="hidden-xs"><?php echo ucwords($_SESSION["nomUser"]); ?></span>
+	            </a>
+	            <ul class="dropdown-menu">
+	              <!-- User image -->
+	              <li class="user-header">
+	                <img src="vistas/img/usuarios/default/anonymous.png" class="img-circle" alt="User Image">
 
-						<img src="vistas/img/usuarios/default/anonymous.png" class="user-image">
+	                <p>
+	                  <?php echo ucwords($_SESSION["nomUser"]);?>
+	                  <!--<small>Miembro desde Nov. 2012</small>-->
+	                </p>
+	              </li>
+	              <!-- Menu Footer-->
+	              <li class="user-footer">
+	                <div class="pull-left">
+	                  <a href="perfil" class="btn btn-default btn-flat">Perfil</a>
+	                </div>
+	                <div class="pull-right">
+	                  <a href="salir" class="btn btn-default btn-flat">Salir</a>
+	                </div>
+	              </li>
+	            </ul>
+	          </li>
 
-						<span class="hidden-xs"><?php echo $_SESSION["nomUser"];?></span>
-					</a>
-
-					<!-- Dropdown-toggle -->
-					<ul class="dropdown-menu">
-
-						<li class="user-body">
-								
-							<div class="pull-right">
-
-								<a href="salir" class="btn btn-default btn-flat">Salir</a>
-								
-							</div>
-
-						</li>
-					</ul>					
-				</li>
 			</ul>
-		</div> 
-
-
-		   	   	
+		</div>    	
 
 	</nav>
 
